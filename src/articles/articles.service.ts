@@ -9,6 +9,10 @@ export class ArticlesService {
         @InjectRepository(Article) private articleRepository: Repository<Article>,
     ) { }
 
+    async createArticle(article: Article) {
+        await this.articleRepository.save(article);
+    }
+
     async getArticles(article: Article): Promise<Article[]> {
         return await this.articleRepository.find();
     }
@@ -22,7 +26,7 @@ export class ArticlesService {
 
     async updateArticle(article: Article) {
         this.articleRepository.save(article);
-    };
+    }
 
     async deleteArticle(article: Article) {
         this.articleRepository.delete(article);
