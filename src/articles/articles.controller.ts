@@ -5,26 +5,26 @@ import { Article } from './article.entity';
 @Controller('articles')
 export class ArticlesController {
 
-    constructor(private service: ArticlesService) { }
+  constructor(private service: ArticlesService) { }
 
-    @Get(':id')
-    get(@Param() params) {
-        return this.service.getArticle(params.id);
-    }
+  @Get(':id')
+  get(@Param() params) {
+    return this.service.getArticle(params.id);
+  }
 
-    @Post()
-    create(@Body() article: Article) {
-        return this.service.createArticle(article);
-    }
+  @Post()
+  create(@Body() article: Article) {
+    return this.service.createArticle(article);
+  }
 
-    @Put()
-    update(@Body() article: Article) {
-        return this.service.updateArticle(article);
-    }
+  @Put()
+  update(@Body() article: Article) {
+    return this.service.updateArticle(article);
+  }
 
-    @Delete(':id')
-    deleteArticle(@Param() params) {
-        return this.service.deleteArticle(params.id);
-    }
+  @Delete(':id')
+  deleteArticle(@Param() params) {
+    return this.service.deleteArticle(params.id);
+  }
 
 }
